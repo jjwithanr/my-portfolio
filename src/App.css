@@ -1,3 +1,5 @@
-.App {
-  background-color: teal;
+@font-face {
+    font-family: "Pixel";
+    src: local("w95fa"),
+        url("./fonts/w95fa.woff") format("woff");
 }
