@@ -22,3 +22,18 @@
         right: 0;
     }
 }
+
+.taskbarClock {
+    position: absolute;
+    right: 4px;
+    height: 32px;
+    line-height: 32px !important;
+    margin: 0.25rem;
+    padding: 0 0.5rem;
+    border: 2px inset #ededed;
+    // prevent highlighting
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none;
+}
+

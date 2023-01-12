@@ -1,9 +1,10 @@
 .startMenu {
+    
     position: relative;
     width: 115px; // button width + extra space
     &__slide {
         position: absolute;
-        bottom: 36px;
+        bottom: 40px;
         overflow: hidden;
         max-height: 0;
         &.-isOpen {
@@ -29,7 +30,7 @@
     }
     &:after {
         position: absolute;
-        content: "Start";
+        content: "Windows95";
         left: 4px;
         bottom: -15px;
         color: #ededed;
