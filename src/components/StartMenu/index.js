@@ -94,6 +94,7 @@ export default function StartMenu() {
             onClick={handleButtonClick}
             active={isOpen}
             className="mr1 startMenu__triggerButton"
+            size="sm"
         >
         <img
             src={require("../../assets/win-logo.png")}
