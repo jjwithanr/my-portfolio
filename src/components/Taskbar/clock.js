@@ -25,7 +25,7 @@ export default function TaskbarClock() {
         if (hour > 12)
             refClock.current.innerHTML = `${formatHour(hour)}:${min} PM`;
         else
-            refClock.current.innerHTML = `${formatHour(hour)}:${min} AM`;
+            refClock.current.innerHTML = `${hour == 0 ? 12 : formatHour(hour)}:${min} AM`;
     };
 
     React.useEffect(() => {
@@ -34,8 +34,6 @@ export default function TaskbarClock() {
         window.clearTimeout(refTimer.current);
         refClock.current = null;
     };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return <p ref={refClock} className="taskbarClock"></p>;
