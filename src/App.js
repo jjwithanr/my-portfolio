@@ -1,13 +1,13 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { styleReset } from 'react95';
-import Taskbar from './components/Taskbar';
 import './App.css';
 
 import original from 'react95/dist/themes/original';
 
 import "./fonts/w95fa.woff";
 import { RecoilRoot } from 'recoil';
+import Desktop from './components/Desktop';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -20,7 +20,7 @@ const App = () => (
   <RecoilRoot>
     <GlobalStyles />
     <ThemeProvider theme={original}>
-      <Taskbar />
+      <Desktop />
     </ThemeProvider>
   </RecoilRoot>
 );

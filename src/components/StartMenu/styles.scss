@@ -8,7 +8,7 @@
         max-height: 0;
         &.-isOpen {
         max-height: 200px;
-            .startMenu__menu {
+            .startMenu__menu {  
                 transform: translateY(0);
                 transition: 0.15s;
             }
@@ -68,7 +68,7 @@
     }
     > img {
         position: relative;
-        top: 3px;
+        top: 9px;
         margin-right: 0.5rem;
     }
     }

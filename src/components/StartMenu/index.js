@@ -79,9 +79,9 @@ export default function StartMenu() {
                     <MenuListItem onClick={handleListClick("resume")} data-name="resume">
                         <p className="startMenu__menuItem">
                             <img
-                            src={`${require("../../assets/documents.png")}`}
+                            src={`${require("../../assets/resume.png")}`}
                             alt=""
-                            width="45"
+                            width="30"
                             className="pixelated"
                             />
                             Resume
