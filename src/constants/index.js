@@ -1,13 +1,39 @@
-const welcome = {
-    label: "Welcome",
-    header: "JJ's Portfolio",
-    desktopIcon: "",
-    desktopPosition: null,
-    visibility: [true, true], // eg [button visible (show button), window visible (show window)]
+const about = {
+    label: "About Me",
+    header: "Notepad - About JeremyChang.txt",
+    desktopIcon: require(`../assets/wordpad.png`),
+    desktopPosition: 1,
+    visibility: [false, false],
 };
 
-// include GitHub, LinkedIn, Projects, Resume, Paint?
+const projects = {
+    label: "Projects",
+    header: "My Projects",
+    desktopIcon: require(`../assets/projects.png`),
+    desktopPosition: 2,
+    visibility: [false, false],
+};
+
+const engineering = {
+    label: "Engineer Projects",
+    header: "Engineering Projects",
+    desktopIcon: require(`../assets/engineering.png`),
+    desktopPosition: 3,
+    visibility: [false, false],
+};
+
+const resume = {
+    label: "Resume",
+    header: "Resume",
+    desktopIcon: require(`../assets/resume.png`),
+    desktopPosition: 4,
+    visibility: [false, false],
+};
+
 
 export const WINDOW_OBJ = {
-    welcome
+    about,
+    projects,
+    engineering,
+    resume,
 };
