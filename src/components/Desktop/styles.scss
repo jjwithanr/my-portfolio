@@ -2,22 +2,7 @@
     width: 100%;
     height: 100%;
     &__background {
-        position: relative;
-        width: calc(100% - 40px);
-        height: calc(100% - 60px);
-        padding: 30px 20px;
         z-index: 0;
-        &:before {
-            position: absolute;
-            content: "";
-            // background-image: url("../../assets/github-logo.png");
-            opacity: 0.15;
-            top: 0;
-            bottom: -47px;
-            left: 0;
-            right: 0;
-            z-index: -1;
-        }
     }
 }
     .desktopIcon {
@@ -38,8 +23,8 @@
             text-align: center;
         }
         &__image {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             image-rendering: pixelated;
             image-rendering: -moz-crisp-edges;
             image-rendering: crisp-edges;
@@ -49,6 +34,7 @@
             }
         }
         &__name {
+            font-size: larger;
             margin-top: 3px;
             padding: 2px;
             text-align: center;
@@ -64,3 +50,32 @@
             }
         }
     }
+
+.close-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        // background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+        height: 100%;
+        width: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &:after {
+        height: 3px;
+        width: 100%;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

@@ -3,14 +3,14 @@
     width: 115px; // button width + extra space
     &__slide {
         position: absolute;
-        bottom: 32px;
+        bottom: 31px;
         overflow: hidden;
         max-height: 0;
         &.-isOpen {
         max-height: 200px;
             .startMenu__menu {  
                 transform: translateY(0);
-                transition: 0.15s;
+                transition: 0.1s;
             }
         }
     }
@@ -20,8 +20,6 @@
 
         &:before {
             position: absolute;
-            content: "";
-            background-color: #7B7D7B;
             width: 25px;
             height: calc(100% - 4px);
             top: 1px;
@@ -39,7 +37,7 @@
     }
     &__triggerButton {
         margin-bottom: 3px;
-        text-shadow: -0.5px 0 hsla(0, 0%, 0%, 0.7);
+        text-shadow: -1px 0 hsla(0, 0%, 0%, 0.7);
         font-size: 13px;
     }
     &__logo {
@@ -70,17 +68,4 @@
         margin-right: 0.5rem;
     }
     }
-}
-
-.sidebar {
-    display: none;
-    width: 25px;
-    background: rgb(123, 125, 123);
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-}
-.sidebar-image {
-    display: none;
-    width: 100%;
 }

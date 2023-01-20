@@ -10,6 +10,7 @@
         padding-right: 55px;
     }
     &__buttonWrapper {
+        display: flex;
         flex: 1;
     }
     &__applications {
@@ -18,7 +19,7 @@
     }
     &__applicationsButtons {
         position: absolute;
-        left: 0;
+        left: 90px;
         right: 0;
     }
 }
@@ -37,3 +38,18 @@
     user-select: none;
 }
 
+.taskbarButton.taskbarButton {
+    height: 30px;
+    max-width: 100px;
+    > div {
+        width: 100%;
+    }
+}
+.taskbarButton {
+    &__label {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

@@ -10,3 +10,8 @@ export const focusedElement = atom({
     key: "focusedElement",
     default: "",
 });
+
+export const menubarButtons = atom({
+    key: "menubarButtons",
+    default: [],
+});
