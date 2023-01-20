@@ -21,93 +21,9 @@ export default function Projects() {
             </div>
             </div>
             <div className="scrollable -yOnly projectsWindow__body">
-            <div className="projectsWindow__bodyInner">
-                <h1 className="mb2">About Github95</h1>
-                <p className="mb2">
-                PROJECTS
-                </p>
-
-                <p>Built with these libraries and resources:</p>
-                <ul className="projectsWindow__list">
-                <li>
-                    <Anchor href="https://reactjs.org" target="_blank">
-                        React
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor href="https://recoiljs.org" target="_blank">
-                        Recoil
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor
-                        href="https://github.com/arturbien/React95"
-                        target="_blank"
-                    >
-                        React95 Component Library
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor href="https://docs.github.com/en/graphql" target="_blank">
-                        Github GraphQL Api
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor href="https://docs.github.com/en/rest" target="_blank">
-                        Github Rest Api
-                    </Anchor>
-                </li>
-                <li>
-                    <Anchor
-                        href="https://github.com/huchenme/github-trending-api"
-                        target="_blank"
-                    >
-                        (Unofficial) Github Trending Api
-                    </Anchor>
-                </li>
-                </ul>
-                <p className="mb2">
-                    As well as{" "}
-                    <Anchor
-                        href="https://artage.io/en/icon-packs/original-windows-95-icons"
-                        target="_blank"
-                    >
-                        Windows 95 style icons
-                    </Anchor>{" "}
-                    from Artage.
-                </p>
-
-                <p className="mb2">
-                    This project was built just for fun to view repositories and users,
-                    and it works best on desktop browsers but will also work on tablets.
-                </p>
-                <p className="mb2">
-                    New features will be added from time to time. I plan to add the
-                    users profile readme, and also use the Github OAuth api to login so
-                    you can login to your Github account, as well as better error
-                    handling and performance improvements.
-                </p>
-
-                <p className="mb2">
-                    Find out more in the projects repository, clone or fork the code on{" "}
-                    <Anchor
-                        href="https://github.com/edwardpayton/github95"
-                        target="_blank"
-                    >
-                        Github
-                    </Anchor>
-                    , and please report any{" "}
-                    <Anchor
-                        href="https://github.com/edwardpayton/github95/issues"
-                        target="_blank"
-                    >
-                        issues
-                    </Anchor>
-                    .
-                </p>
-
-                <p className="mt2">All the best, Edward Payton :)</p>
-            </div>
+                <div className="projectsWindow__bodyInner">
+                    <h1 className="mb2">Projects</h1>
+                </div>
             </div>
         </section>
     );

@@ -5,6 +5,9 @@ import Draggable from "react-draggable";
 import { useRecoilValue } from "recoil";
 
 import About from "./About";
+import Engineering from "./Engineering";
+import Projects from "./Projects";
+import Resume from "./Resume";
 
 import { focusedElement } from "../store";
 import propTypeChildren from "../utilities/propTypeChildren";
@@ -98,4 +101,4 @@ WindowFrame.propTypes = {
     children: propTypeChildren,
 };
 
-export { About };
+export { About, Engineering, Projects, Resume};

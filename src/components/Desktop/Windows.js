@@ -3,12 +3,18 @@ import { useRecoilState } from "recoil";
 
 import WindowFrame, {
     About,
+    Engineering,
+    Projects,
+    Resume
 } from "../../windows";
 
 import { windowObj } from "../../store";
 
 const componentList = {
     about: About,
+    engineering: Engineering,
+    projects: Projects,
+    resume: Resume
 };
 
 export default function Windows() {
@@ -43,7 +49,6 @@ export default function Windows() {
     <>
         {Object.keys(currentWindows).map((name) => {
             const content = getContent(name);
-            console.log("I'M HERE. Name=" + name);
             return (
                 <WindowFrame
                     key={name}
@@ -52,7 +57,7 @@ export default function Windows() {
                     window={currentWindows[name]}
                     onClose={handleCloseWindow}
                 >
-                {content}
+                    {content}
                 </WindowFrame>
             );
         })}

@@ -132,7 +132,7 @@ export default function Desktop() {
                 </Draggable> */}
 
 
-            {/* {showWindows && <Windows />} */}
+            {showWindows && <Windows />}
             </section>
             </main>
         </>
