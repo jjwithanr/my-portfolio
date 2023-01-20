@@ -115,22 +115,6 @@ export default function Desktop() {
                         );
                     })}
                 </section>
-                
-                
-                {/* <Draggable>
-                <Window className='window'>
-                    <WindowHeader className='window-title'>
-                        <span>not-active.exe</span>
-                        <Button size={"sm"}>
-                            <span className="close" />
-                        </Button>
-                    </WindowHeader>
-                    <WindowContent>
-                        <About />
-                    </WindowContent>
-                </Window>
-                </Draggable> */}
-
 
             {showWindows && <Windows />}
             </section>

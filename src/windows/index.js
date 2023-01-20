@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Window, WindowContent, WindowHeader, Button } from "react95";
+import { Window, WindowContent, WindowHeader, Button, Toolbar } from "react95";
 import Draggable from "react-draggable";
 import { useRecoilValue } from "recoil";
 
@@ -18,7 +18,7 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default function WindowFrame({ name, cssName, window, onClose, children }) {
+export default function WindowFrame({ name, window, onClose, children }) {
     const focused = useRecoilValue(focusedElement);
     const refCloseBtn = React.useRef(undefined);
     const [pos, setPos] = React.useState([]);
@@ -45,9 +45,39 @@ export default function WindowFrame({ name, cssName, window, onClose, children }
                 display: window.visibility[1] ? "block" : "none",
                 zIndex: focused === name ? 2 : 1,
             }}
-            className={`windowFrame -${cssName}`}
+            className={`windowFrame -${name}`}
             >
-            <Window
+
+                <Window shadow={focused === name} className='windowFrame__inner'>
+                    <WindowHeader
+                    className={`handle windowHeader${
+                        focused === name ? "" : " -inactive"
+                    }`}
+                    >
+                        <span>react95.exe</span>
+                            <span ref={refCloseBtn}>
+                            <Button
+                            style={{ marginRight: -1 }}
+                            size={"sm"}
+                            square
+                            onClick={handleClose}
+                            onTouchEnd={handleClose}
+                            >
+                                <span className="close" />
+                            </Button>
+                    </span>
+                    </WindowHeader>
+                    <Toolbar>
+                        <Button variant='menu' size='sm'>
+                            File
+                        </Button>
+                    </Toolbar>
+                    <WindowContent>
+                        {children}
+                    </WindowContent>
+                </Window>
+
+            {/* <Window
                 shadow={focused === name}
                 className="flex-column windowFrame__inner"
             >
@@ -56,31 +86,29 @@ export default function WindowFrame({ name, cssName, window, onClose, children }
                     focused === name ? "" : " -inactive"
                 }`}
                 >
-                <span
-                    dangerouslySetInnerHTML={{
-                        __html: window.header,
-                    }}
-                    className="flex items-center windowHeader__title"
-                ></span>
+                    <span
+                        dangerouslySetInnerHTML={{__html: window.header,}}
+                        className="flex items-center windowHeader__title"
+                    ></span>
 
-                <span ref={refCloseBtn}>
-                    <Button
-                    style={{ marginRight: -1 }}
-                    size={"sm"}
-                    square
-                    onClick={handleClose}
-                    onTouchEnd={handleClose}
-                    >
-                        <span className="close" />
-                </Button>
-                </span>
+                    <span ref={refCloseBtn}>
+                        <Button
+                        style={{ marginRight: -1 }}
+                        size={"sm"}
+                        square
+                        onClick={handleClose}
+                        onTouchEnd={handleClose}
+                        >
+                            <span className="close" />
+                        </Button>
+                    </span>
                 </WindowHeader>
                 <WindowContent className="windowFrame__content">
-                <div className="flex flex-column windowFrame__contentInner">
-                    {children}
-                </div>
+                    <div className="flex flex-column windowFrame__contentInner">
+                        {children}
+                    </div>
                 </WindowContent>
-            </Window>
+            </Window> */}
             </div>
         </Draggable>
     );
@@ -95,7 +123,6 @@ const shapeWindow = {
 
 WindowFrame.propTypes = {
     name: PropTypes.string.isRequired,
-    cssName: PropTypes.string.isRequired,
     window: PropTypes.shape(shapeWindow).isRequired,
     onClose: PropTypes.func.isRequired,
     children: propTypeChildren,

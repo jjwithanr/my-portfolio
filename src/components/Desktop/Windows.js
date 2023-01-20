@@ -19,7 +19,6 @@ const componentList = {
 
 export default function Windows() {
     const [currentWindows, setWindows] = useRecoilState(windowObj);
-  // eslint-disable-next-line no-unused-vars
 
     const handleCloseWindow = (name) => {
         const updated = {
@@ -36,14 +35,8 @@ export default function Windows() {
 
     const getContent = (name) => {
         const Comp = componentList[name];
-
         return <Comp />;
     };
-
-    const getCssName = (name) => {
-        if(name in componentList) return name;
-        return "repositoryDetails";
-    }
 
     return (
     <>
@@ -53,7 +46,6 @@ export default function Windows() {
                 <WindowFrame
                     key={name}
                     name={name}
-                    cssName={name}
                     window={currentWindows[name]}
                     onClose={handleCloseWindow}
                 >
