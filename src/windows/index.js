@@ -18,10 +18,34 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default function WindowFrame({ name, window, onClose, children }) {
+export default function WindowFrame({ name, frame, onClose, children }) {
     const focused = useRecoilValue(focusedElement);
     const refCloseBtn = React.useRef(undefined);
     const [pos, setPos] = React.useState([]);
+
+    const windowContainerRef = React.useRef(null);
+
+    const [widgetState, setWidgetState] = React.useState({
+        visible: false,
+        disabled: true,
+        bounds: { left: 0, top: 0, bottom: 0, right: 0 },
+    });
+    const onStart = (event, uiData) => {
+        const { clientWidth, clientHeight } = window?.document?.documentElement;
+        const targetRect = windowContainerRef.current.getBoundingClientRect();
+
+        if (targetRect) {
+            setWidgetState((prevState) => ({
+                ...prevState,
+                bounds: {
+                    left: -targetRect?.left + uiData?.x,
+                    right: clientWidth - (targetRect?.right - uiData?.x),
+                    top: -targetRect?.top + uiData?.y,
+                    bottom: clientHeight - 45 - (targetRect?.bottom - uiData?.y),
+                },
+        }));
+        }
+    };
 
     const handleClose = () => {
         onClose(name);
@@ -38,11 +62,15 @@ export default function WindowFrame({ name, window, onClose, children }) {
                 y: `calc(-50% - ${pos[1]}px)`,
             }}
             handle=".handle"
+            nodeRef={windowContainerRef}
+            onStart={(event, uiData) => onStart(event, uiData)}
+            bounds={widgetState.bounds}
         >
             <div
+            ref={windowContainerRef}
             data-name={name}
             style={{
-                display: window.visibility[1] ? "block" : "none",
+                display: frame.visibility[1] ? "block" : "none",
                 zIndex: focused === name ? 2 : 1,
             }}
             className={`windowFrame -${name}`}
@@ -54,10 +82,16 @@ export default function WindowFrame({ name, window, onClose, children }) {
                         focused === name ? "" : " -inactive"
                     }`}
                     >
-                        <span>react95.exe</span>
-                            <span ref={refCloseBtn}>
+                        <span
+                        dangerouslySetInnerHTML={{
+                            __html: frame.header,
+                        }}
+                        className="flex items-center windowHeader__title"
+                        ></span>
+
+                        <span ref={refCloseBtn}>
                             <Button
-                            style={{ marginRight: -1 }}
+                            style={{ marginRight: -1, marginTop: 6 }}
                             size={"sm"}
                             square
                             onClick={handleClose}
@@ -65,50 +99,12 @@ export default function WindowFrame({ name, window, onClose, children }) {
                             >
                                 <span className="close" />
                             </Button>
-                    </span>
+                        </span>
                     </WindowHeader>
-                    <Toolbar>
-                        <Button variant='menu' size='sm'>
-                            File
-                        </Button>
-                    </Toolbar>
-                    <WindowContent>
+                    <WindowContent style={{padding: 0}}>
                         {children}
                     </WindowContent>
                 </Window>
-
-            {/* <Window
-                shadow={focused === name}
-                className="flex-column windowFrame__inner"
-            >
-                <WindowHeader
-                className={`flex items-center justify-between handle windowHeader${
-                    focused === name ? "" : " -inactive"
-                }`}
-                >
-                    <span
-                        dangerouslySetInnerHTML={{__html: window.header,}}
-                        className="flex items-center windowHeader__title"
-                    ></span>
-
-                    <span ref={refCloseBtn}>
-                        <Button
-                        style={{ marginRight: -1 }}
-                        size={"sm"}
-                        square
-                        onClick={handleClose}
-                        onTouchEnd={handleClose}
-                        >
-                            <span className="close" />
-                        </Button>
-                    </span>
-                </WindowHeader>
-                <WindowContent className="windowFrame__content">
-                    <div className="flex flex-column windowFrame__contentInner">
-                        {children}
-                    </div>
-                </WindowContent>
-            </Window> */}
             </div>
         </Draggable>
     );
@@ -123,7 +119,7 @@ const shapeWindow = {
 
 WindowFrame.propTypes = {
     name: PropTypes.string.isRequired,
-    window: PropTypes.shape(shapeWindow).isRequired,
+    frame: PropTypes.shape(shapeWindow).isRequired,
     onClose: PropTypes.func.isRequired,
     children: propTypeChildren,
 };

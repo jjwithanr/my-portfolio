@@ -46,7 +46,7 @@ export default function Windows() {
                 <WindowFrame
                     key={name}
                     name={name}
-                    window={currentWindows[name]}
+                    frame={currentWindows[name]}
                     onClose={handleCloseWindow}
                 >
                     {content}

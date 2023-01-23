@@ -13,18 +13,6 @@ import reducer, {
     SET_WINDOWS,
 } from "./reducer";
 
-//temp
-import {
-    Button,
-    Window,
-    WindowContent,
-    WindowHeader
-    } from 'react95';
-import { About } from "../../windows";
-import useDoubleClick from 'use-double-click';
-import Draggable from "react-draggable";
-// end temp
-
 import "./styles.scss";
 
 const desktopIcons = (() => {
