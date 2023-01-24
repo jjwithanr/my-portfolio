@@ -8,7 +8,7 @@ export default function About() {
     return (
         <section className="aboutWindow">
             <div className="scrollable aboutWindow__body">
-                    <h1>Welcome to my portfolio website!</h1>
+                <h1>Welcome to my portfolio website!</h1>
                 <div className="aboutWindow__bodyInner">
                     <div className="description">
                         <p>
@@ -22,7 +22,7 @@ export default function About() {
                         </p>
                     </div>
                     <div className="picture"> 
-                        <img src={require("../../assets/profile-picture.jpg")} />
+                        <img src={require("../../assets/media/profile-picture.jpg")} />
                     </div>
                 </div>
             </div>
