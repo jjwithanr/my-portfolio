@@ -1,5 +1,4 @@
 import React from "react";
-import { Button, Anchor } from "react95";
 
 import "./styles.scss";
 
@@ -22,7 +21,10 @@ export default function About() {
                         </p>
                     </div>
                     <div className="picture"> 
-                        <img src={require("../../assets/media/profile-picture.jpg")} />
+                        <img 
+                            src={require("../../assets/media/profile-picture.jpg")}
+                            alt=""
+                        />
                     </div>
                 </div>
             </div>
