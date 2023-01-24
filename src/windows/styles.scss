@@ -16,12 +16,12 @@
     }
     &__contentInner {
         position: relative;
-        height: calc(100% - 40px);
+        // height: calc(100% - 40px);
     }
 
     // Window specific styles
     &.-about {
-        max-height: 550px;
+        max-height: 390px;
         width: 650px;
     }
     &.-engineering {
