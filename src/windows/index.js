@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Window, WindowContent, WindowHeader, Button, Toolbar } from "react95";
+import { Window, WindowContent, WindowHeader, Button } from "react95";
 import Draggable from "react-draggable";
 import { useRecoilValue } from "recoil";
 
@@ -76,7 +76,7 @@ export default function WindowFrame({ name, frame, onClose, children }) {
             className={`windowFrame -${name}`}
             >
 
-                <Window shadow={focused === name} className='windowFrame__inner'>
+                <Window shadow={focused === name} className="windowFrame__inner">
                     <WindowHeader
                     className={`handle windowHeader${
                         focused === name ? "" : " -inactive"

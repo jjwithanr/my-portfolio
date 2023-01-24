@@ -1,34 +1,12 @@
-.resumeWindow {
-    &__header {
-        height: 30px;
-    }
-    &__body {
-        width: 100%;
-        height: 100%;
-        border: 2px inset #ededed;
-        background-color: #fff;
-    }
-    &__bodyInner {
-        padding: 1rem;
-        > h1 {
-            line-height: 2;
-        }
-    }
-    &__list {
-        list-style: square outside none;
-        padding-left: 1rem;
-        > li {
-            list-style: inherit;
-            line-height: 3;
-        }
-    }
-    &__button {
-        // mimic an anchor
-        outline: none;
-        border: none;
-        background: none;
-        padding: 0;
-        text-decoration: underline;
-        color: #1034a6;
-    }
+.react-pdf__Page__textContent {
+    display: none;
+}
+
+.react-pdf__Page__annotations {
+    display: none;
+}
+
+.react-pdf__Document{
+    max-height: 375px;
+    padding: 1rem 0;
 }
