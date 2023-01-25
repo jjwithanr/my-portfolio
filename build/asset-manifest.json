@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.918facc5.css",
+    "main.js": "/static/js/main.3470d7d0.js",
+    "static/media/Final_Report_7A.pdf": "/static/media/Final_Report_7A.f937d267ef5fb25530d5.pdf",
+    "static/media/Final_Report_7B.pdf": "/static/media/Final_Report_7B.8b07f4f0bd3775c4192a.pdf",
+    "static/media/todocal.gif": "/static/media/todocal.fd5fd61fdb3e5280f0d3.gif",
+    "static/media/kan-read.gif": "/static/media/kan-read.f9d6042ba3ba82bb4bc7.gif",
+    "static/media/Chang_Jeremy_Resume.pdf": "/static/media/Chang_Jeremy_Resume.6b2715a908d7d9dc53cb.pdf",
+    "static/media/profile-picture.jpg": "/static/media/profile-picture.30155803c7c6e9b64581.jpg",
+    "static/media/resume.png": "/static/media/resume.0143796f68b52caac936.png",
+    "static/media/todocal-results.png": "/static/media/todocal-results.0546a218d387b6a3b9bd.png",
+    "static/media/w95fa.woff": "/static/media/w95fa.a79f08367baf01d93aca.woff",
+    "index.html": "/index.html",
+    "main.918facc5.css.map": "/static/css/main.918facc5.css.map",
+    "main.3470d7d0.js.map": "/static/js/main.3470d7d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.918facc5.css",
+    "static/js/main.3470d7d0.js"
+  ]
+}
