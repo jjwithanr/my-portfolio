@@ -10,11 +10,9 @@ export default function Resume() {
 
     return (
         <section>
-            {/* <Button variant="menu" size="sm">
-                <a href={resume} download="Resume">
-                Download
-                </a>
-            </Button> */}
+            <Button variant="menu" size="sm">
+                <a href="/Chang_Jeremy_Resume.pdf" target="_blank">Print</a>
+            </Button>
             <div className="scrollable">
                 <Document file={resume}>
                     <Page pageNumber={1} />
