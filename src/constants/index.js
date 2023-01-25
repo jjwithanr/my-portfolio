@@ -3,7 +3,7 @@ const about = {
     header: "Notepad - About JeremyChang.txt",
     desktopIcon: require(`../assets/wordpad.png`),
     desktopPosition: 1,
-    visibility: [false, false],
+    visibility: [true, true],
 };
 
 const projects = {
