@@ -8,10 +8,14 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 export default function Resume() {
 
+    const handlePrint = () => {
+        window.open("./Chang_Jeremy_Resume.pdf");
+    };
+
     return (
         <section>
-            <Button variant="menu" size="sm">
-                <a href="/Chang_Jeremy_Resume.pdf" target="_blank">Print</a>
+            <Button variant="menu" size="sm" onClick={handlePrint}>
+                Print
             </Button>
             <div className="scrollable">
                 <Document file={resume}>
