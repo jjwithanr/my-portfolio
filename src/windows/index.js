@@ -11,6 +11,7 @@ import Resume from "./Resume";
 
 import { focusedElement } from "../store";
 import propTypeChildren from "../utilities/propTypeChildren";
+import { WINDOW_OBJ } from "../constants";
 
 import "./styles.scss";
 
@@ -22,6 +23,8 @@ export default function WindowFrame({ name, frame, onClose, children }) {
     const focused = useRecoilValue(focusedElement);
     const refCloseBtn = React.useRef(undefined);
     const [pos, setPos] = React.useState([]);
+
+    const { desktopIcon } = WINDOW_OBJ[name]; 
 
     const windowContainerRef = React.useRef(null);
 
@@ -82,12 +85,15 @@ export default function WindowFrame({ name, frame, onClose, children }) {
                         focused === name ? "" : " -inactive"
                     }`}
                     >
-                        <span
-                        dangerouslySetInnerHTML={{
-                            __html: frame.header,
-                        }}
-                        className="flex items-center windowHeader__title"
-                        ></span>
+                        <div>
+                            <img className="icon" src={desktopIcon} alt="" width="20" height="20" />
+                            <span
+                            dangerouslySetInnerHTML={{
+                                __html: frame.header,
+                            }}
+                            className="flex items-center windowHeader__title"
+                            ></span>
+                        </div>
 
                         <span ref={refCloseBtn}>
                             <Button

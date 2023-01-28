@@ -46,17 +46,27 @@
     background: #999 !important;
 }
 .windowHeader__title {
+    padding-left: 1.75rem;
     &__title {
         > img {
             width: 20px;
             height: 20px;
-            margin-right: 0.5rem;
         }
     }
 }
 .windowButton__icon.-close {
     font-weight: bold;
     transform: translateY(-2px);
+    pointer-events: none;
+}
+
+.icon {
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 2px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
     pointer-events: none;
 }
 

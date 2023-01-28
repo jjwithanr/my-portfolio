@@ -4,10 +4,13 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { Button, Tooltip } from "react95";
 
 import { windowObj, focusedElement } from "../../store";
+import { WINDOW_OBJ } from "../../constants";
 
 export default function TaskbarButton({ name, label }) {
     const [currentWindows, setWindows] = useRecoilState(windowObj);
     const focused = useRecoilValue(focusedElement);
+
+    const { desktopIcon } = WINDOW_OBJ[name];
 
     const handleClick = () => {
         const isFocused = currentWindows[name].visibility[1] && focused === name;
@@ -40,8 +43,8 @@ export default function TaskbarButton({ name, label }) {
                     className={`bold taskbarButton${focused === name ? " -focused" : ""}`}
                     style={{ marginRight: 5 }}
                 >
+                    <img className={`taskbarButton__icon -${name}`} src={desktopIcon} alt="" width="17" height="17" />
                     <Tooltip text={label ? label : name} className="tooltipOverlay">
-                        {/* implement image? */}
                         <span className="taskbarButton__label">{label ? label : name}</span>
                     </Tooltip>
                 </Button>

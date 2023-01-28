@@ -13,7 +13,6 @@ export default function DesktopIcon({
             <button
                 data-name={name}
                 className={`desktopIcon__button${name === active ? " -focused" : ""}`}
-                // onDoubleClick={onDoubleClick}
                 onClick={onDoubleClick}
             >
             <img
