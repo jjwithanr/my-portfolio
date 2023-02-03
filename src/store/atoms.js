@@ -8,7 +8,7 @@ export const windowObj = atom({
 
 export const focusedElement = atom({
     key: "focusedElement",
-    default: "",
+    default: "about",
 });
 
 export const menubarButtons = atom({
