@@ -1,10 +1,6 @@
 .aboutWindow {
-    &__header {
-        height: 30px;
-        margin-top: -5px;
-    }
     &__body {
-        height: 340px;
+        height: 60vh;
         > h1 {
             font-size: 30px;
             padding-left: 0.5rem;
@@ -14,16 +10,9 @@
         display: flex;
         padding: 1rem;
     }
-}
 
-.description {
-    width: 66%;
-    margin-right: 2rem;
-}
-
-.picture {
-    width: 33%;
-    > img {
-        width: 95%;
+    > p {
+        width: 66%;
+        margin-right: 2rem;
     }
 }

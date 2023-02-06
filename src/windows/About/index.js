@@ -11,21 +11,21 @@ export default function About() {
                 <div className="aboutWindow__bodyInner">
                     <div className="description">
                         <p>
-                            I'm Jeremy Chang and I graduated from UC Irvine in 2022 with a B.S. in Computer Engineering
-                            with a minor in Information & Computer Science.
+                            My name is Jeremy Chang and I graduated from UC Irvine in 2022 with a B.S. in Computer Engineering
+                            with a minor in Information & Computer Science. Glad you are visiting my website! Double-click on the 
+                            icons to open up a window to explore my past projects and experiences!
                         </p>
                         <br />
                         <p>
-                            Based in L.A., I'm an apiring full-stack developer and am passionate about 
+                            Based in Los Angeles, I'm an apiring full-stack developer and am passionate about 
                             software developement. I am currently open to entry-level software roles!
                         </p>
                     </div>
-                    <div className="picture"> 
-                        <img 
-                            src={require("../../assets/media/profile-picture.jpg")}
-                            alt=""
-                        />
-                    </div>
+                    <img 
+                        src={require("../../assets/media/profile-picture.jpg")}
+                        alt=""
+                        width="180"
+                    />
                 </div>
             </div>
         </section>
