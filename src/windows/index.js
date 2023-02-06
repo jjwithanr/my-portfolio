@@ -36,6 +36,7 @@ export default function WindowFrame({ name, frame, onClose, children }) {
     const onStart = (event, uiData) => {
         const { clientWidth, clientHeight } = window?.document?.documentElement;
         const targetRect = windowContainerRef.current.getBoundingClientRect();
+        const taskbarBuffer = 45;
 
         if (targetRect) {
             setWidgetState((prevState) => ({
@@ -44,7 +45,7 @@ export default function WindowFrame({ name, frame, onClose, children }) {
                     left: -targetRect?.left + uiData?.x,
                     right: clientWidth - (targetRect?.right - uiData?.x),
                     top: -targetRect?.top + uiData?.y,
-                    bottom: clientHeight - 45 - (targetRect?.bottom - uiData?.y),
+                    bottom: clientHeight - taskbarBuffer - (targetRect?.bottom - uiData?.y),
                 },
         }));
         }
@@ -70,16 +71,15 @@ export default function WindowFrame({ name, frame, onClose, children }) {
             bounds={widgetState.bounds}
         >
             <div
-            ref={windowContainerRef}
-            data-name={name}
-            style={{
-                display: frame.visibility[1] ? "block" : "none",
-                zIndex: focused === name ? 2 : 1,
-            }}
-            className={`windowFrame -${name}`}
+                ref={windowContainerRef}
+                data-name={name}
+                style={{
+                    display: frame.visibility[1] ? "block" : "none",
+                    zIndex: focused === name ? 2 : 1,
+                }}
+                className={`windowFrame -${name}`}
             >
-
-                <Window shadow={focused === name} className="windowFrame__inner">
+                <Window shadow={focused === name}>
                     <WindowHeader
                     className={`handle windowHeader${
                         focused === name ? "" : " -inactive"
@@ -107,7 +107,7 @@ export default function WindowFrame({ name, frame, onClose, children }) {
                             </Button>
                         </span>
                     </WindowHeader>
-                    <WindowContent style={{padding: 0}}>
+                    <WindowContent className={`content -${name}`}>
                         {children}
                     </WindowContent>
                 </Window>
