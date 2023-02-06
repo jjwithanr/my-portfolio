@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import { windowObj } from "../../store";
+import { windowObj, focusedElement } from "../../store";
 import { WINDOW_OBJ } from "../../constants";
 import DesktopIcon from "./DesktopIcon";
 
@@ -22,6 +22,7 @@ const desktopIcons = (() => {
 
 export default function Desktop() {
     const [currentWindows, setWindows] = useRecoilState(windowObj);
+    const [focused, setFocused] = useRecoilState(focusedElement);
     const [active, setActive] = React.useState("");
 
     const [
@@ -45,6 +46,7 @@ export default function Desktop() {
                     visibility: [true, true],
                 },
             };
+            setFocused(name);
         
             window.setTimeout(() => {
                 setWindows({ ...currentWindows, ...updated });

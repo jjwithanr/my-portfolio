@@ -18,19 +18,19 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 function AppWrapper() {
-  const [focused, setfocused] = useRecoilState(focusedElement);
+  const [focused, setFocused] = useRecoilState(focusedElement);
   const currentButtons = useRecoilValue(menubarButtons);
 
   const handleClick = React.useCallback(
     (e) => {
       if (e.target.dataset && e.target.dataset.name === "start-menu") return;
       const closest = e.target.closest("[data-name]");
-      if (!closest) return setfocused("");
+      if (!closest) return setFocused("");
       const { name } = closest.dataset;
-      setfocused(name);
+      setFocused(name);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [focused, setfocused, currentButtons]
+    [focused, setFocused, currentButtons]
   );
 
   document.addEventListener("click", handleClick);

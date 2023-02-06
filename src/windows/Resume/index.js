@@ -17,7 +17,7 @@ export default function Resume() {
             <Button variant="menu" size="sm" onClick={handlePrint}>
                 Print
             </Button>
-            <div className="scrollable">
+            <div className="scrollable resumeWindow">
                 <Document file={resume}>
                     <Page pageNumber={1} />
                 </Document>
