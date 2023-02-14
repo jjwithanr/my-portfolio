@@ -6,7 +6,7 @@ export default function About() {
 
     return (
         <section className="aboutWindow">
-            <div className="aboutWindow__body">
+            <div className="scrollable aboutWindow__body">
                 <h1>Welcome to my portfolio website!</h1>
                 <div className="aboutWindow__bodyInner">
                     <div className="description">

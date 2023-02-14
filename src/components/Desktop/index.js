@@ -22,7 +22,7 @@ const desktopIcons = (() => {
 
 export default function Desktop() {
     const [currentWindows, setWindows] = useRecoilState(windowObj);
-    const [focused, setFocused] = useRecoilState(focusedElement);
+    const [_, setFocused] = useRecoilState(focusedElement);
     const [active, setActive] = React.useState("");
 
     const [
@@ -84,7 +84,7 @@ export default function Desktop() {
             <main>
             <section className="desktop">
                 <section 
-                    className="flex flex-column desktop__background"
+                    className="desktop__background"
                     onMouseDown={handleDesktopClick}
                 >
                     {showIcons &&
