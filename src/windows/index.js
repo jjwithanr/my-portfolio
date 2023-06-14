@@ -24,7 +24,7 @@ export default function WindowFrame({ name, frame, onClose, children }) {
     const refCloseBtn = React.useRef(undefined);
     const [pos, setPos] = React.useState([]);
 
-    const { desktopIcon } = WINDOW_OBJ[name]; 
+    const { desktopIcon } = WINDOW_OBJ[name];
 
     const windowContainerRef = React.useRef(null);
 

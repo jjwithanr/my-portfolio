@@ -49,8 +49,9 @@ export default function StartMenu() {
                     verticalAlign="top"
                     className="startMenu__menu"
                 >
+                    
                     <a href="http://www.linkedin.com/in/jeremy-r-chang" target="_blank" rel="noreferrer">
-                        <MenuListItem onClick={handleListClick("linkedin")} data-name="linkedin">
+                        <MenuListItem data-name="linkedin">
                             <p className="startMenu__menuItem">
                                 <img
                                     src={`${require("../../assets/linkedin-logo.png")}`}
@@ -63,7 +64,7 @@ export default function StartMenu() {
                         </MenuListItem>
                     </a>
                     <a href="https://github.com/jjwithanr" target="_blank" rel="noreferrer">
-                        <MenuListItem onClick={handleListClick("github")} data-name="github">
+                        <MenuListItem data-name="github">
                             <p className="startMenu__menuItem">
                                 <img
                                 src={`${require("../../assets/github-logo.png")}`}
