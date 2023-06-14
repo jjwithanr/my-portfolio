@@ -1,6 +1,6 @@
 const about = {
     label: "About Me",
-    header: "Notepad - About JeremyChang.txt",
+    header: "Notepad - About Me",
     desktopIcon: require(`../assets/wordpad.png`),
     desktopPosition: 1,
     visibility: [true, true],
