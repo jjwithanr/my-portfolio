@@ -3,7 +3,8 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        max-height: 90vh;
+        max-width: 100%;
+        overflow-x: hidden;
         align-content: flex-start;
         padding: 1rem 0;
         z-index: 0;
