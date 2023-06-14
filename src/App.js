@@ -1,6 +1,6 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { styleReset } from 'react95';
+import { AppBar, styleReset } from 'react95';
 import './App.css';
 
 import original from 'react95/dist/themes/original';
@@ -20,6 +20,19 @@ const GlobalStyles = createGlobalStyle`
 function AppWrapper() {
   const [focused, setFocused] = useRecoilState(focusedElement);
   const currentButtons = useRecoilValue(menubarButtons);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  const checkWindowSize = () => {
+    setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+  };
+
+  React.useEffect(() => {
+    checkWindowSize();
+    window.addEventListener('resize', checkWindowSize);
+    return () => {
+      window.removeEventListener('resize', checkWindowSize);
+    };
+  }, []);
 
   const handleClick = React.useCallback(
     (e) => {
@@ -36,7 +49,7 @@ function AppWrapper() {
   document.addEventListener("click", handleClick);
   document.addEventListener("touchstart", handleClick);
 
-  return <><Desktop /></>;
+  return isMobile ? <AppBar fullWidth className="mobile"></AppBar> : <Desktop />;
 }
 
 const App = () => (

@@ -1,3 +1,11 @@
 body {
   background-color: teal;
 }
+
+.mobile.mobile {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  z-index: 3;
+  height: 20vh;
+}
