@@ -20,6 +20,19 @@ const GlobalStyles = createGlobalStyle`
 function AppWrapper() {
   const [focused, setFocused] = useRecoilState(focusedElement);
   const currentButtons = useRecoilValue(menubarButtons);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  const checkWindowSize = () => {
+      setIsMobile(window.innerWidth <= 833);
+  }
+
+  React.useEffect(() => {
+    checkWindowSize();
+    window.addEventListener('resize', checkWindowSize);
+    return () => {
+      window.removeEventListener('resize', checkWindowSize);
+    };
+  }, []);
 
   const handleClick = React.useCallback(
     (e) => {
@@ -36,7 +49,7 @@ function AppWrapper() {
   document.addEventListener("click", handleClick);
   document.addEventListener("touchstart", handleClick);
 
-  return <><Desktop /></>;
+  return isMobile ? <h1>Test</h1> : <><Desktop /></>;
 }
 
 const App = () => (

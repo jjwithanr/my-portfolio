@@ -8,6 +8,7 @@ import About from "./About";
 import Engineering from "./Engineering";
 import Projects from "./Projects";
 import Resume from "./Resume";
+import Paint from "./Paint";
 
 import { focusedElement } from "../store";
 import propTypeChildren from "../utilities/propTypeChildren";
@@ -130,4 +131,4 @@ WindowFrame.propTypes = {
     children: propTypeChildren,
 };
 
-export { About, Engineering, Projects, Resume};
+export { About, Engineering, Projects, Resume, Paint};

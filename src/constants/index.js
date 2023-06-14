@@ -30,10 +30,18 @@ const resume = {
     visibility: [false, false],
 };
 
+const paint = {
+    label: "Paint",
+    header: "Paint",
+    desktopIcon: require(`../assets/resume.png`),
+    desktopPosition: 5,
+    visibility: [false, false],
+};
 
 export const WINDOW_OBJ = {
     about,
     projects,
     engineering,
     resume,
+    paint
 };
