@@ -34,8 +34,6 @@ export default function Engineering() {
                         <img
                             src={require("../../assets/media/virtual-quadcopter.png")}
                             alt=""
-                            width="35%"
-                            style={{ marginRight: "20px" }}
                         />
                         <p>
                         The quadcopter engineering project provided valuable hands-on experience applying fundamental design processes from concept creation to prototype testing and refinement. I gained skills in teamwork, problem-solving, and project management that will translate well to an engineering role.
@@ -46,8 +44,6 @@ export default function Engineering() {
                         <img
                             src={require("../../assets/media/irl-quadcopter.JPG")}
                             alt=""
-                            width="35%"
-                            style={{ marginRight: "20px" }}
                         />
                         <p>
                         Working through each stage of the project helped me strengthen valuable technical and soft skills through practical application. I learned to break down complex design challenges, collaborate well in an interdisciplinary team, and organize tasks to deliver results on time and on budget. The hands-on experience building the quadcopter increased my confidence in my ability to tackle ambitious engineering projects, solve problems creatively, and produce high-quality work that meets key requirements.   
@@ -68,8 +64,6 @@ export default function Engineering() {
                         <img
                             src={require("../../assets/media/irl-fitness-watch.jpg")}
                             alt=""
-                            width="25%"
-                            style={{ marginRight: "20px" }}
                         />
                         <p>
                         The goal of this project was to develop an affordable, practical fitness tracker. We followed an iterative engineering design process of planning, prototyping, testing and refinement. Software like TinkerCAD, SolidWorks and MIT App Inventor were essential tools for our product development. Collaboration between members was critical, with each member contributing their unique skills and perspectives throughout the process.
@@ -79,8 +73,6 @@ export default function Engineering() {
                         <img 
                             src={require("../../assets/media/circuit-boards.png")} 
                             alt="" 
-                            width="25%" 
-                            style={{ marginRight: "20px" }} 
                         />
                         <p>
                         To reduce thickness, we adopted a modular design instead of an all-in-one approach. In Solidworks, we designed custom modules to house different electrical components. 3D printing provided the precision needed to match our module designs. Through multiple iterations, we identified opportunities to further minimize dimensions while still fitting components. Shortening module lengths and widths resulted in a more compact design while maintaining functionality.
@@ -93,7 +85,11 @@ export default function Engineering() {
                         </p>
                     </div>
                     <div className="engineeringWindow__item">
-                        <img src={require("../../assets/media/model-fitness-watch.jpg")} alt="" style={{ width: "75%", marginLeft: "auto", marginRight: "auto", marginTop: "2rem"}} />
+                        <img 
+                            src={require("../../assets/media/model-fitness-watch.jpg")} 
+                            alt="" 
+                            style={{ width: "75%", marginLeft: "auto", marginRight: "auto", marginTop: "2rem"}} 
+                        />
                     </div>
                     </div>
                 )}

@@ -9,6 +9,11 @@ export default function About() {
             <div className="scrollable aboutWindow__body">
                 <h1>Welcome!</h1>
                 <div className="aboutWindow__bodyInner">
+                    <img 
+                        src={require("../../assets/media/profile-picture.jpg")}
+                        alt="Headshot picture"
+                        className="profile-picture"
+                    />
                     <div className="description">
                         <p>
                         My name is Jeremy Chang and I graduated from UC Irvine in Spring 2022 with a B.S. in Computer Engineering and a minor in Information and Computer Science.
@@ -22,11 +27,6 @@ export default function About() {
                         My education at UC Irvine provided a strong foundation in computer architecture, programming and problem-solving. I continuously challenged myself through side projects and extracurricular activities, building marketable skills that will help accelerate my career. Please feel free to click on the project icons to explore windows showcasing highlights from my work and experiences
                         </p>
                     </div>
-                    <img 
-                        src={require("../../assets/media/profile-picture.jpg")}
-                        alt="Headshot picture"
-                        className="profile-picture"
-                    />
                 </div>
 
             </div>
