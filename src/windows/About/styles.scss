@@ -7,9 +7,18 @@
     }
     &__bodyInner {
         display: flex;
+        flex-direction: row;
+        align-items: center;
         padding: 1rem;
-        width: 75%;
-        margin-right: auto;
+        width: 90%;
         margin-left: auto;
     }
+}
+
+.profile-picture {
+    width: 25%;
+    max-height: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-left: 2rem;
 }

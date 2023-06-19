@@ -25,9 +25,10 @@ export default function About() {
                     <img 
                         src={require("../../assets/media/profile-picture.jpg")}
                         alt="Headshot picture"
-                        width="25%"
+                        className="profile-picture"
                     />
                 </div>
+
             </div>
         </section>
     );
