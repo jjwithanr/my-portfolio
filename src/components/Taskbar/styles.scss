@@ -74,3 +74,27 @@
     }
 
 }
+
+@media screen and (max-width: 859px) {
+    .taskbarButton.taskbarButton {
+        width: 10vw; 
+    }
+    .taskbarButton {
+        &__icon {
+            &.-about {
+                margin-left: 0rem;
+            }
+            &.-engineering {
+                margin-left: 0rem;
+            }
+            &.-projects {
+                margin-left: 0rem;
+            }
+            &.-resume {
+                margin-left: 0rem;
+            }
+    
+        }
+    
+    }
+}

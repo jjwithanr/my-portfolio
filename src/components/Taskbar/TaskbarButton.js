@@ -9,6 +9,19 @@ import { WINDOW_OBJ } from "../../constants";
 export default function TaskbarButton({ name, label }) {
     const [currentWindows, setWindows] = useRecoilState(windowObj);
     const focused = useRecoilValue(focusedElement);
+    const [showLabel, setShowLabel] = React.useState(false);
+
+    const checkWindowSize = () => {
+        setShowLabel(window.innerWidth > 859);
+    };
+
+    React.useEffect(() => {
+        checkWindowSize();
+        window.addEventListener('resize', checkWindowSize);
+        return () => {
+        window.removeEventListener('resize', checkWindowSize);
+        };
+    }, []);
 
     const { desktopIcon } = WINDOW_OBJ[name];
 
@@ -44,9 +57,13 @@ export default function TaskbarButton({ name, label }) {
                     style={{ marginRight: 5 }}
                 >
                     <img className={`taskbarButton__icon -${name}`} src={desktopIcon} alt="" width="17" height="17" />
-                    <Tooltip text={label ? label : name} className="tooltipOverlay">
-                        <span className="taskbarButton__label">{label ? label : name}</span>
-                    </Tooltip>
+                    <div>
+                        { showLabel && 
+                        <Tooltip text={label ? label : name} className="tooltipOverlay">
+                            <span className="taskbarButton__label">{label ? label : name}</span>
+                        </Tooltip>
+                        }
+                    </div>
                 </Button>
             )}
         </>

@@ -24,16 +24,23 @@ export default function StartMenu() {
     };
     
     const handleListClick = (name) => () => {
-        const updated = {
-            [name]: {
-            ...currentWindows[name],
-            visibility: [true, true],
-            },
-        };
-        window.setTimeout(() => {
-            setWindows({ ...currentWindows, ...updated });
-        }, 300);
-        toggleMenu(false);
+        if (window.innerWidth < 859) {
+            if (name == "resume") {
+                window.open("./Chang_Jeremy_Resume.pdf");
+            }
+        }
+        else {
+            const updated = {
+                [name]: {
+                ...currentWindows[name],
+                visibility: [true, true],
+                },
+            };
+            window.setTimeout(() => {
+                setWindows({ ...currentWindows, ...updated });
+            }, 300);
+            toggleMenu(false);
+        }
     };
 
     const handleClickOutside = ({ target }) => {
