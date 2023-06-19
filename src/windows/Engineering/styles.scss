@@ -3,28 +3,14 @@
 
     &__details {
         height: 100%;
-
-        > p {
-            width: 66%;
-        }
-
-        > img {
-            width: 34%;
-            float: right;
-            margin: 1rem;
-        }
     }
 
     &__item {
         display: flex;
         margin-top: 2rem;
-
-        &.-big-image {
-            width: 50%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 2rem;
-        }
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 

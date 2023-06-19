@@ -8,10 +8,8 @@
     &__bodyInner {
         display: flex;
         padding: 1rem;
-    }
-
-    > p {
-        width: 66%;
-        margin-right: 2rem;
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
