@@ -39,7 +39,22 @@ export default function Desktop() {
     const handleDoubleClick = (name) => (e) => {
         e.stopPropagation();
         const currentTime = new Date().getTime();
-        if (lastClickTime && currentTime - lastClickTime < 250) {
+        if (window.innerWidth > 859) {
+            if (lastClickTime && currentTime - lastClickTime < 250) {
+                const updated = {
+                    [name]: {
+                        ...currentWindows[name],
+                        visibility: [true, true],
+                    },
+                };
+                setFocused(name);
+            
+                window.setTimeout(() => {
+                    setWindows({ ...currentWindows, ...updated });
+                }, 300);
+            }
+        }
+        else {
             const updated = {
                 [name]: {
                     ...currentWindows[name],
@@ -54,7 +69,6 @@ export default function Desktop() {
         }
         lastClickTime = currentTime;
     };
-
 
     React.useEffect(() => {
         dispatch({ type: SET_LOADING });
