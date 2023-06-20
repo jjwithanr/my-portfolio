@@ -55,17 +55,22 @@ export default function Desktop() {
             }
         }
         else {
-            const updated = {
-                [name]: {
-                    ...currentWindows[name],
-                    visibility: [true, true],
-                },
-            };
-            setFocused(name);
-        
-            window.setTimeout(() => {
-                setWindows({ ...currentWindows, ...updated });
-            }, 300);
+            if (name == "resume") {
+                window.open("./Chang_Jeremy_Resume.pdf");
+            }
+            else {
+                const updated = {
+                    [name]: {
+                        ...currentWindows[name],
+                        visibility: [true, true],
+                    },
+                };
+                setFocused(name);
+            
+                window.setTimeout(() => {
+                    setWindows({ ...currentWindows, ...updated });
+                }, 300);
+            }
         }
         lastClickTime = currentTime;
     };
