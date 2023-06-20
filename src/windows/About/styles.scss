@@ -39,3 +39,11 @@
         margin-bottom: 2rem;
     }
 }
+
+@media screen and (max-width: 859px) {
+    .aboutWindow {
+        &__body {
+            width: calc(90vw - 2rem);
+        }
+    }
+}

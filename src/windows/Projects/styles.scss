@@ -30,3 +30,10 @@
         }
     }
 }
+
+@media screen and (max-width: 859px) {
+    .projectsWindow {
+        width: calc(90vw - 2rem);
+        height: 70vh;
+    }
+}
