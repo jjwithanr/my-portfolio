@@ -42,4 +42,5 @@ function reducer(state, action) {
     }
 }
 
-export default () => useReducer(reducer, initialState);
+const useCustomReducer = () => useReducer(reducer, initialState);
+export default useCustomReducer;
