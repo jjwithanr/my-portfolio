@@ -11,7 +11,7 @@ export default function About() {
                 <div className="aboutWindow__bodyInner">
                     <img 
                         src={require("../../assets/media/profile-picture.jpg")}
-                        alt="Headshot picture"
+                        alt="Professional personal headshot"
                         className="profile-picture"
                     />
                     <div className="description">
