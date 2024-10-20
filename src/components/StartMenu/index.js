@@ -25,7 +25,7 @@ export default function StartMenu() {
     
     const handleListClick = (name) => () => {
         if (window.innerWidth < 859) {
-            if (name == "resume") {
+            if (name === "resume") {
                 window.open("./Chang_Jeremy_Resume.pdf");
             }
         }
