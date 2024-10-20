@@ -22,7 +22,7 @@ const desktopIcons = (() => {
 
 export default function Desktop() {
     const [currentWindows, setWindows] = useRecoilState(windowObj);
-    const [_, setFocused] = useRecoilState(focusedElement);
+    const [, setFocused] = useRecoilState(focusedElement);
     const [active, setActive] = React.useState("");
 
     const [
@@ -55,7 +55,7 @@ export default function Desktop() {
             }
         }
         else {
-            if (name == "resume") {
+            if (name === "resume") {
                 window.open("./Chang_Jeremy_Resume.pdf");
             }
             else {
@@ -86,7 +86,7 @@ export default function Desktop() {
         window.setTimeout(() => {
             dispatch({ type: SET_WINDOWS });
         }, 1500);
-    }, []);
+    }, [dispatch]);
     
     React.useEffect(() => {
         const toggle = showLoader ? "add" : "remove";
