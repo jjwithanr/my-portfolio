@@ -34,7 +34,7 @@ export default function TaskbarClock() {
         window.clearTimeout(refTimer.current);
         refClock.current = null;
     };
-    }, []);
+    }, [clock]);
 
     return <p ref={refClock} className="taskbarClock"></p>;
 }
