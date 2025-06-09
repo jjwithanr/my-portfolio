@@ -9,7 +9,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 export default function Resume() {
 
     const handlePrint = () => {
-        window.open("./Chang_Jeremy_Resume.pdf");
+        window.open(resume);
     };
 
     return (
