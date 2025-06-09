@@ -16,7 +16,7 @@ export const projectsContent = {
         },
         {
             title: "ToDo Cal",
-            link: "https://github.com/jjwithanr/kan-read",
+            link: "https://github.com/jjwithanr/todo-cal",
             date: "Apr 2021",
             technologies: "Python, Tkinter, Google Calendar API",
             description: "ToDo Cal helps users stay accountable by giving them an option to schedule a time to complete them. When the user has a task listed and confirms their intended time to finish it, ToDo Scheduler will schedule the earliest time in the coming week that fits their time range on their Google Calendar.",
