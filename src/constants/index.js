@@ -15,7 +15,7 @@ const projects = {
 };
 
 const engineering = {
-    label: "Engineer Projects",
+    label: "Engineering Projects",
     header: "Engineering Projects",
     desktopIcon: require(`../assets/engineering.png`),
     desktopPosition: 3,
